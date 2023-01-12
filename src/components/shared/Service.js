@@ -6,7 +6,7 @@ const Service = (props) => {
     console.log(image);
     return (
         <div className="card card-compact w-96 bg-base-100 shadow-xl">
-  <figure><img src={image} alt={title} /></figure>
+  <figure><img src={image.data} alt={title} /></figure>
   <div className="card-body">
     <h2 className="card-title">{title}</h2>
     <p>Price: {price}</p>
