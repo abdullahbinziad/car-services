@@ -148,11 +148,11 @@ console.log(services);
     </div>
  {/* Services Section  */}
 
- <section className="">
-<h3>Service</h3>
-<h1>Our Service Area</h1>
-<p>the majority have suffered alteration in some form, by injected humour, or randomised <br /> words which don't look even slightly believable. </p>
-<div className="">
+ <section className="w-4/5 mx-auto mt-6 rounded-md">
+<h3 className="text-xl text-primary font-semibold">Service</h3>
+<h1 className="text-4xl font-bold mb-5">Our Service Area</h1>
+<p className=" text-peragraph text-lg">the majority have suffered alteration in some form, by injected humour, or randomised <br /> words which don't look even slightly believable. </p>
+<div className=" grid grid-cols-3	gap-4 mt-8">
 {
   services.map(service=> <Service
   key={service._id}

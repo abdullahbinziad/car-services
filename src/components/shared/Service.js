@@ -5,14 +5,13 @@ const Service = (props) => {
 
     console.log(image);
     return (
-        <div className="card card-compact w-96 bg-base-100 shadow-xl">
-  <figure><img src= {image} alt={title} /></figure>
-  <div className="card-body">
-    <h2 className="card-title">{title}</h2>
+        <div className="card card-compact  bg-base-100 shadow-xl">
+  <figure className=' h-56'><img className='p-4 w-full h-full' src= {image}alt={title} /></figure>
+  <h2 className="card-title mt-6  px-6">{title}</h2>
+  <div className=" flex justify-between text-primary px-6 py-4 text-xl font-semibold ">
+   
     <p>Price: {price}</p>
-    <div className="card-actions justify-end">
-      <button className="btn btn-primary">Buy Now</button>
-    </div>
+    <p>→</p>
   </div>
 </div>
     );

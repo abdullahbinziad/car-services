@@ -24,6 +24,7 @@ module.exports = {
       {
         'mytheme': {
           'primary': '#FF3811',
+          'peragraph': '#737373',
           'primary-focus': '#4506cb',
           'primary-content': '#ffffff',
           'secondary': '#f000b8',
