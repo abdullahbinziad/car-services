@@ -1,29 +1,42 @@
-import React from 'react';
-import signUpImg from '../../assets/images/login/login.svg'
-
-
-
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
+import signUpImg from "../../assets/images/login/login.svg";
 
 const SignUp = () => {
+   //read the auth context  
+  const { createUser } = useContext(AuthContext);
 
-const handleOnSubmit =(event)=>{
-event.preventDefault();
-}
+//   handle on submit 
+  const loginOnSubmit = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
 
-    return (
-        <div className="hero mt-10">
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  return (
+    <div className="hero mt-10">
       <div className="hero-content flex-col lg:flex-row gap-28 ">
         <div className="text-center lg:text-left">
-          <img className='w-3/4' src={signUpImg} alt="" />
+          <img className="w-3/4" src={signUpImg} alt="" />
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-          <form onSubmit={handleOnSubmit} className="card-body">
-          <h1 className="text-5xl font-bold">Sign UP Now!</h1>
+          <form onSubmit={loginOnSubmit} className="card-body">
+            <h1 className="text-5xl font-bold">Sign UP Now!</h1>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Name</span>
               </label>
               <input
+                name="name"
                 type="text"
                 placeholder="Your Full Name"
                 className="input input-bordered"
@@ -34,6 +47,7 @@ event.preventDefault();
                 <span className="label-text">Email</span>
               </label>
               <input
+                name="email"
                 type="text"
                 placeholder="Email"
                 className="input input-bordered"
@@ -44,29 +58,29 @@ event.preventDefault();
                 <span className="label-text">Confirm Password</span>
               </label>
               <input
+                name="password"
                 type="text"
                 placeholder="Confirm password"
                 className="input input-bordered"
               />
-              <label className="label">
-                <a href="#" className="label-text-alt link link-hover">
-                  Forgot password?
-                </a>
-              </label>
             </div>
             <div className="form-control mt-6">
-              
-             <input className="btn btn-primary" type="submit" value="Sign Up" />
-
-           
+              <input
+                className="btn btn-primary"
+                type="submit"
+                value="Sign Up"
+              />
             </div>
           </form>
-          
-Social icon here 
+
+          <span className="label-text">Have already an Account?</span>
+          <Link to="/login" className="py-5 ">
+            Login
+          </Link>
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default SignUp;

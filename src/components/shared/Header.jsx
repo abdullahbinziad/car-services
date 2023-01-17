@@ -49,7 +49,7 @@ const Header = () => {
             </li>
           </ul>
         </div>
-          <Link className="btn btn-ghost normal-case text-xl"> <img className="w-4/6" src={logo} alt="Logo" />  </Link>
+          <Link to='./' className="btn btn-ghost normal-case text-xl"> <img className="w-4/6" src={logo} alt="Logo" />  </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -63,10 +63,10 @@ const Header = () => {
           <Link to="./services">Servics</Link>
           </li>
           <li>
-          <Link to="./blog">Blog</Link>
+          <Link to="./login">Login</Link>
           </li>
           <li>
-          <Link to="./contact">Contact</Link>
+          <Link to="./signup">Signup</Link>
           </li>
         </ul>
       </div>

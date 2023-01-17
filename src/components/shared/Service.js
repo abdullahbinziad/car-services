@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Service = (props) => {
-    const {title,price,image}= props.service;
+    const {_id,title,price,image}= props.service;
 
     console.log(image);
     return (
@@ -11,7 +12,8 @@ const Service = (props) => {
   <div className=" flex justify-between text-primary px-6 py-4 text-xl font-semibold ">
    
     <p>Price: {price}</p>
-    <p>→</p>
+   <Link to= {`/checkout/${_id}`} > <button className="btn btn-secondary">BUY</button>
+ </Link>
   </div>
 </div>
     );
